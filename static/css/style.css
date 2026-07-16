@@ -839,3 +839,49 @@ body.fondoInvitacion{
     }
 
 }
+
+/* ==========================
+   CELULARES
+========================== */
+@media (max-width: 768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    #invitacion{
+        width:92%;
+        padding:25px;
+    }
+
+    #invitacion h1{
+        font-size:48px;
+    }
+
+    #invitacion h3{
+        font-size:42px;
+    }
+
+    #invitacion p{
+        font-size:17px;
+    }
+
+    .abeja{
+        width:70px;
+    }
+
+    #pooh{
+        width:170px;
+    }
+
+    #poohGlobos{
+        width:170px;
+        top:15px;
+        right:10px;
+    }
+
+    .marca{
+        width:90px;
+    }
+
+}
