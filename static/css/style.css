@@ -1,0 +1,841 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    padding:0;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+
+    background:linear-gradient(
+        180deg,
+        #fff8fb 0%,
+        #ffeef5 45%,
+        #ffdbe9 100%
+    );
+
+    font-family:Arial, sans-serif;
+
+}
+
+.inicio{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+.nube{
+
+    position:absolute;
+
+    width:180px;
+
+    opacity:.8;
+
+}
+
+.nube1{
+
+    top:40px;
+
+    left:-30px;
+
+    width:230px;
+
+    animation:flotar1 8s infinite alternate;
+
+}
+
+.nube2{
+
+    bottom:70px;
+
+    right:-30px;
+
+    width:230px;
+
+    animation:flotar2 7s infinite alternate;
+
+}
+
+.tarro{
+    position: relative;
+
+    width: 280px;
+    height: 340px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    animation: bajar 1.8s ease;
+}
+
+.frasco{
+    position: absolute;
+
+    bottom: 0;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 250px;
+
+    z-index: 1;
+}
+
+.tapa{
+    position: absolute;
+
+    top: 30px;       /* Súbela */
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 220px;
+
+    z-index: 2;
+
+    transition: transform .8s ease;
+}
+.click{
+
+    margin-top:35px;
+
+    font-size:24px;
+
+    color:#9B5E3C;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    animation:parpadeo 1.3s infinite;
+
+    text-shadow:2px 2px 6px rgba(255,255,255,.7);
+
+    transition:1s;
+
+    opacity:1;
+
+}
+
+@keyframes bajar{
+
+    from{
+
+        transform:translateY(-500px);
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes parpadeo{
+
+    50%{
+
+        opacity:.3;
+
+    }
+
+}
+@keyframes flotar1{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(40px);
+    }
+
+}
+
+@keyframes flotar2{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-40px);
+    }
+
+}
+
+#mensaje{
+
+    position:absolute;
+
+    top:80px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#b86b7c;
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:1s;
+
+    z-index:100;
+
+    text-shadow:2px 2px 8px white;
+
+}
+
+#mensaje.mostrar{
+
+    opacity:1;
+
+}
+
+/* Animación del tarro cuando sale hacia arriba */
+.tarro.salida{
+    animation: reboteSalida 1.6s forwards;
+}
+
+/* Rebote + salida */
+@keyframes reboteSalida{
+    0%{
+        transform: translateY(0) scale(1);
+    }
+    20%{
+        transform: translateY(-25px) scale(1.03);
+    }
+    40%{
+        transform: translateY(0) scale(1);
+    }
+    60%{
+        transform: translateY(-40px) scale(1.05);
+    }
+    100%{
+        transform: translateY(-700px) scale(0.8);
+        opacity:0;
+    }
+}
+
+#pooh{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:-350px;
+
+    width:250px;
+
+    opacity:0;
+
+    transition:2s;
+
+    z-index:20;
+
+}
+
+#bienvenida{
+
+    position:absolute;
+
+    top:120px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:55px;
+
+    color:#B16B57;
+
+    opacity:0;
+
+    transition:2s;
+
+    text-shadow:3px 3px 10px white;
+
+}
+
+/* Pooh saludando */
+.saludar{
+
+    animation: saludo 0.7s ease-in-out infinite alternate;
+
+}
+
+@keyframes saludo{
+
+    from{
+
+        transform: rotate(-3deg);
+
+    }
+
+    to{
+
+        transform: rotate(5deg);
+
+    }
+
+}
+
+#invitacion{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(.2);
+
+    width:90%;
+    max-width:520px;
+    min-height:620px;
+
+    background:#FFF6D8;
+    
+    border:6px solid #E5BF72;
+    
+    border-radius:18px;
+
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,.35),
+        rgba(255,248,225,.35)
+        );
+    
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+    opacity:0;
+
+    transition:1.2s;
+
+    overflow:hidden;
+
+}
+
+#invitacion.mostrar{
+
+    opacity:1;
+
+    animation:desenrollar 1.3s ease forwards;
+
+}
+
+#invitacion h2{
+
+    font-family:'Fredoka', sans-serif;
+
+    font-size:28px;
+
+    color:#A96E45;
+
+}
+
+#invitacion h1{
+
+    font-family:'Chewy', cursive;
+
+    font-size:50px;
+
+    color:#D89C2B;
+
+    letter-spacing:2px;
+
+}
+
+#invitacion p{
+
+    font-family:'Quicksand', sans-serif;
+
+    font-size:20px;
+
+    color:#6B5A4C;
+
+    line-height:1.7;
+
+}
+
+/* Fondo cuando aparece la invitación */
+body.fondoInvitacion{
+
+    background:linear-gradient(
+        180deg,
+        #FFF8E8 0%,
+        #FDECC8 50%,
+        #F7DFA8 100%
+    );
+
+    transition:2s;
+
+}
+
+#invitacion h3{
+
+    font-family:'Chewy', cursive;
+
+    font-size:46px;
+
+    color:#D57B91;
+
+}
+
+.abeja{
+
+    position:absolute;
+
+    width:200px;
+
+    opacity:0;
+
+    z-index:90;
+
+    pointer-events:none;
+
+}
+
+@keyframes volar1{
+
+    0%{
+        transform:translate(0,0) rotate(0deg);
+    }
+
+    50%{
+        transform:translate(10px,-8px) rotate(8deg);
+    }
+
+    100%{
+        transform:translate(0,0) rotate(0deg);
+    }
+
+}
+
+@keyframes volar2{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(-8px,12px);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
+
+}
+
+@keyframes volar3{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(12px,6px);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
+
+}
+
+.abeja1{
+    top:110px;
+    left:220px;
+    animation:volar1 2.5s infinite;
+}
+
+.abeja2{
+    top:120px;
+    right:220px;
+    animation:volar2 3s infinite;
+}
+
+.abeja3{
+    top:260px;
+    left:180px;
+    animation:volar3 2.8s infinite;
+}
+
+.abeja4{
+    top:430px;
+    left:170px;
+    animation:volar2 3.2s infinite;
+}
+
+.abeja5{
+    top:250px;
+    right:180px;
+    animation:volar1 2.6s infinite;
+}
+
+.abeja6{
+    top:430px;
+    right:170px;
+    animation:volar3 3.4s infinite;
+}
+
+.abeja7{
+    top:600px;
+    left:210px;
+    animation:volar2 2.9s infinite;
+}
+
+.abeja8{
+    top:600px;
+    right:210px;
+    animation:volar1 3.5s infinite;
+}
+
+.abeja9{
+    top:40px;
+    right:340px;
+    animation:volar3 2.7s infinite;
+}
+
+/*============================*/
+/* SALIDA DE LAS ABEJITAS */
+/*============================*/
+
+@keyframes salirAbeja1{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(0,0) scale(.2);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translate(-260px,-180px);
+
+    }
+
+}
+
+@keyframes salirAbeja2{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(0,0) scale(.2);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translate(240px,-170px);
+
+    }
+
+}
+
+@keyframes salirAbeja3{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(0,0) scale(.2);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translate(-300px,60px);
+
+    }
+
+}
+
+@keyframes desenrollar{
+
+    0%{
+
+        transform:translate(-50%,-50%) scaleY(0);
+
+        opacity:0;
+
+    }
+
+    60%{
+
+        transform:translate(-50%,-50%) scaleY(1.05);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translate(-50%,-50%) scaleY(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.abeja.volar{
+
+    opacity:1;
+
+}
+
+/*============================*/
+/* FLORES CAYENDO */
+/*============================*/
+
+.flores{
+
+    position:fixed;
+
+    top:-50px;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:5;
+
+}
+
+.flores span{
+
+    position:absolute;
+
+    top:-50px;
+
+    font-size:30px;
+
+    animation:caer linear infinite;
+
+    opacity:.8;
+
+}
+
+.flores span:nth-child(1){
+
+    left:8%;
+    animation-duration:10s;
+}
+
+.flores span:nth-child(2){
+
+    left:20%;
+    animation-duration:13s;
+}
+
+.flores span:nth-child(3){
+
+    left:35%;
+    animation-duration:11s;
+}
+
+.flores span:nth-child(4){
+
+    left:48%;
+    animation-duration:15s;
+}
+
+.flores span:nth-child(5){
+
+    left:62%;
+    animation-duration:12s;
+}
+
+.flores span:nth-child(6){
+
+    left:74%;
+    animation-duration:14s;
+}
+
+.flores span:nth-child(7){
+
+    left:86%;
+    animation-duration:10s;
+}
+
+.flores span:nth-child(8){
+
+    left:94%;
+    animation-duration:13s;
+}
+
+@keyframes caer{
+
+    0%{
+
+        transform:translateY(-60px) rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:translateY(120vh) rotate(360deg);
+
+    }
+
+}
+
+/*==========================*/
+/* POOH CON GLOBOS */
+/*==========================*/
+
+#poohGlobos{
+
+    position:absolute;
+
+    width:220px;
+
+    top:40px;
+
+    right:-320px;
+
+    opacity:0;
+
+    transition:2.5s;
+
+    z-index:80;
+
+}
+
+@keyframes balanceoGlobos{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    25%{
+        transform:rotate(2deg);
+    }
+
+    50%{
+        transform:rotate(0deg);
+    }
+
+    75%{
+        transform:rotate(-2deg);
+    }
+
+    100%{
+        transform:rotate(0deg);
+    }
+
+}
+
+#poohGlobos{
+
+    position:absolute;
+
+    width:240px;
+
+    top:40px;
+
+    right:-320px;
+
+    opacity:0;
+
+    transition:2.5s;
+
+    z-index:80;
+
+    transform-origin:bottom center;
+
+}
+
+#marcaAgua{
+
+    position:fixed;
+
+    bottom:18px;
+    right:18px;
+
+    width:120px;
+
+    opacity:0;
+
+    animation:aparecerMarca 2s forwards;
+
+    animation-delay:1s;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
+
+@keyframes aparecerMarca{
+
+    from{
+
+        opacity:0;
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:.35;
+        transform:translateY(0);
+
+    }
+
+}

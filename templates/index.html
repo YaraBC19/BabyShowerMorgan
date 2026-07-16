@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baby Shower Morgan</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="inicio">
+
+    <!-- Nubes -->
+    <img src="{{ url_for('static', filename='img/decoracion/nube1.png') }}" class="nube nube1">
+    <img src="{{ url_for('static', filename='img/decoracion/nube2.png') }}" class="nube nube2">
+
+    <!-- Tarro -->
+    <div class="tarro" id="tarro">
+
+    <img src="{{ url_for('static', filename='img/miel/tapa.png') }}"
+         class="tapa"
+         id="tapa">
+
+    <img src="{{ url_for('static', filename='img/miel/tarro.png') }}"
+         class="frasco">
+
+</div>
+
+    <p class="click">
+    ✨ Toca el tarrito y descubre una dulce sorpresa ✨
+</p>
+
+<h1 id="mensaje">
+    ✨ La dulce espera ya está por terminar ✨
+</h1>
+
+<img
+    src="{{ url_for('static', filename='img/personajes/pooh_miel.png') }}"
+    id="pooh"
+    alt="Pooh">
+
+<h1 id="bienvenida">
+    Bienvenidos al<br>
+    Baby Shower<br>
+    Morgan
+</h1>
+
+<!-- Música de fondo -->
+<audio id="musica" autoplay loop>
+    <source
+        src="{{ url_for('static', filename='music/fondo.mp3') }}"
+        type="audio/mpeg">
+</audio>
+
+<!-- Audio de Pooh -->
+<audio id="audioPooh">
+    <source
+        src="{{ url_for('static', filename='music/pooh.mp3') }}"
+        type="audio/mpeg">
+</audio>
+
+<div id="invitacion">
+
+    <h2>
+
+✨ Estás cordialmente invitado ✨
+
+</h2>
+
+<h1>
+
+🍯 Baby Shower 🍯
+
+</h1>
+
+<h3>
+
+Morgan
+
+</h3>
+    <p>
+        Con mucha alegría queremos compartir contigo
+        la dulce espera de nuestra pequeña princesa.
+    </p>
+
+    <br>
+
+    <p>📅 <strong>Fecha</strong></p>
+    <p>Domingo 19 de Julio</p>
+
+    <br>
+
+    <p>🕑 <strong>Hora</strong></p>
+    <p>14:00pm </p>
+
+    <br>
+
+    <p>📍 <strong>Lugar</strong></p>
+    <p>🍯 Zona Munaypata, Av.Naciones Unidas,Calle Tres Cruces, Nº 110 🐻🐝</p>
+
+</div>
+
+<img src="{{ url_for('static', filename='img/iconos/abeja1.png') }}" class="abeja abeja1">
+<img src="{{ url_for('static', filename='img/iconos/abeja2.png') }}" class="abeja abeja2">
+<img src="{{ url_for('static', filename='img/iconos/abejas.png') }}" class="abeja abeja3">
+
+<img src="{{ url_for('static', filename='img/iconos/abeja1.png') }}" class="abeja abeja4">
+<img src="{{ url_for('static', filename='img/iconos/abeja2.png') }}" class="abeja abeja5">
+<img src="{{ url_for('static', filename='img/iconos/abejas.png') }}" class="abeja abeja6">
+
+<img src="{{ url_for('static', filename='img/iconos/abeja1.png') }}" class="abeja abeja7">
+<img src="{{ url_for('static', filename='img/iconos/abeja2.png') }}" class="abeja abeja8">
+<img src="{{ url_for('static', filename='img/iconos/abejas.png') }}" class="abeja abeja9">
+
+<img
+src="{{ url_for('static', filename='img/personajes/pooh_globos.png') }}"
+id="poohGlobos">
+
+<div class="flores">
+
+    <span>🌸</span>
+    <span>🌼</span>
+    <span>🌸</span>
+    <span>🌼</span>
+    <span>🌸</span>
+    <span>🌼</span>
+    <span>🌸</span>
+    <span>🌼</span>
+
+</div>
+
+<img
+    src="{{ url_for('static', filename='img/logo/marca.png') }}"
+    id="marcaAgua"
+    alt="Marca de agua">
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
