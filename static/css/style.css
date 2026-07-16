@@ -843,7 +843,7 @@ body.fondoInvitacion{
 /* ==========================
    CELULARES
 ========================== */
-@media (max-width: 768px){
+@media (max-width:768px){
 
     body{
         overflow-x:hidden;
@@ -851,37 +851,116 @@ body.fondoInvitacion{
 
     #invitacion{
         width:92%;
-        padding:25px;
+        padding:25px 18px;
     }
 
     #invitacion h1{
-        font-size:48px;
+        font-size:40px;
+        line-height:1.1;
+    }
+
+    #invitacion h2{
+        font-size:22px;
     }
 
     #invitacion h3{
-        font-size:42px;
+        font-size:36px;
     }
 
     #invitacion p{
         font-size:17px;
+        line-height:1.6;
     }
 
+    /* Abejas más pequeñas */
     .abeja{
-        width:70px;
+        width:45px;
     }
 
-    #pooh{
-        width:170px;
+    /* Abejitas acomodadas alrededor */
+
+    .abeja1{
+        top:120px;
+        left:8px;
     }
 
-    #poohGlobos{
-        width:170px;
-        top:15px;
+    .abeja2{
+        top:180px;
+        right:8px;
+    }
+
+    .abeja3{
+        top:340px;
+        left:12px;
+    }
+
+    .abeja4{
+        top:480px;
         right:10px;
     }
 
+    .abeja5{
+        top:650px;
+        left:15px;
+    }
+
+    .abeja6{
+        top:840px;
+        right:12px;
+    }
+
+    .abeja7{
+        top:980px;
+        left:12px;
+    }
+
+    .abeja8{
+        top:1150px;
+        right:12px;
+    }
+
+    .abeja9{
+        top:1320px;
+        left:10px;
+    }
+
+    /* Pooh con globos */
+
+    #poohGlobos{
+
+        width:120px;
+
+        top:20px;
+
+        right:-15px;
+
+        opacity:.85;
+    }
+
+    /* Pooh con miel */
+
+    #poohMiel{
+
+        width:150px;
+
+        left:-15px;
+
+        bottom:40px;
+
+        opacity:.9;
+    }
+
+    /* Marca de agua */
+
     .marca{
-        width:90px;
+
+        width:85px;
+
+        right:8px;
+
+        bottom:8px;
+
+        opacity:.28;
     }
 
 }
